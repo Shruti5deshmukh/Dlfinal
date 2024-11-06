@@ -1,0 +1,47 @@
+import tensorflow as tf 
+mport numpy as np 
+import matplotlib.pyplot as plt
+
+data = [ 
+[1, 2],
+    [3, 4]
+]
+x = tf.constant(data) print(type(x)) print(x)
+
+np_array = np.array(data)
+ x_np = tf.convert_to_tensor(np_array)
+ print(x_np)
+ print(type(x_np))
+
+x_ones = tf.ones_like(x) 
+print("Ones Tensor: \n", x_ones)
+
+tf.random.uniform(shape=x.shape, dtype=tf.float32) 
+print("Random Tensor:\n", x_rand)
+
+ shape = (2, 3)
+random_tensor = tf.random.uniform(shape) 
+print(random_tensor) print(type(random_tensor))
+ones_tensor = tf.ones(shape) 
+print(ones_tensor) print(type(ones_tensor))
+zeros_tensor = tf.zeros(shape) 
+print(zeros_tensor) print(type(zeros_tensor)) 
+
+tf.random.uniform((3, 4)) 
+print(tensor) print(tensor.shape) print(tensor.dtype)
+
+tensor = tf.ones((4, 4))
+ print(tensor) tensor1 = tf.zeros((4, 4)) print(tensor1)
+
+tensor2 = tf.concat([tensor, tensor1], axis=0) print(tensor2)
+
+tensor_mul = tf.multiply(tensor, tensor1) 
+print(tensor_mul)
+
+tensor_T = tf.transpose(tensor) print(tensor_T)
+tensor_add = tensor + 3 print(tensor_add)
+
+plt.matshow(tensor2) 
+plt.colorbar() 
+plt.title('Tensor Matrix Plot') 
+plt.show()
